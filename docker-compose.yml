@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+
+  web_sinerji:
+    container_name: web_sinerji
+    build: .
+    mem_limit: 1G
+    mem_reservation: 100MB
+    restart: always
+    environment:
+      - GENERIC_TIMEZONE=America/Sao_Paulo
+      - LANG=pt_BR.UTF-8
+      - LC_TIME=pt_BR.UTF-8
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./target/pessoaweb.war:/opt/jboss/wildfly/standalone/deployments/pessoaweb.war
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.web_sinerji.rule=Host(`sinerji.lab.autobits.interno`)
+      - traefik.http.routers.web_sinerji.entrypoints=web
+      - traefik.http.routers.web_sinerji.tls=false
+      - traefik.http.services.web_sinerji.loadbalancer.server.port=8080
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - db_autobits_postgresql144_dev
+
+networks:
+  frontend:
+    external: true
+  backend:
+    external: true
