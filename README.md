@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Projeto de Cadastro de Pessoas com Endereços
 
 Este projeto é uma aplicação Java utilizando o framework JSF (JavaServer Faces) com o banco de dados PostgreSQL. O objetivo faz parte do desafio proposto para vaga de desenvolvedor java, a aplicação deverá permitir o cadastro de pessoas e seus endereços.
@@ -292,3 +293,7 @@ Obs.:
 - É pré-requisito um banco de dados com o nome sinerji.
 ```
 
+=======
+# projeto-sinerji
+projeto-sinerji
+>>>>>>> 8b718cd1cacef5156abbba8ed9ec04485c827392
