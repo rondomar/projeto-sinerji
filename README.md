@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Projeto de Cadastro de Pessoas com Endereços
 
 Este projeto é uma aplicação Java utilizando o framework JSF (JavaServer Faces) com o banco de dados PostgreSQL. O objetivo faz parte do desafio proposto para vaga de desenvolvedor java, a aplicação deverá permitir o cadastro de pessoas e seus endereços.
